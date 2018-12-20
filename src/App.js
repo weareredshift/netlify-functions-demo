@@ -7,7 +7,6 @@ import Identity from './fun/Identity';
 import Form from './fun/Form';
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {}

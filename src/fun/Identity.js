@@ -24,7 +24,8 @@ const netlifyAuth = {
 
 const Identity = ({ setState, user  }) => {
   const login = () => {
-    netlifyAuth.authenticate((response, other) => {
+    netlifyAuth.authenticate((response) => {
+      console.log('AUTH RESPONSE', response);
       setState({
         user: {
           name: response.user_metadata.full_name,

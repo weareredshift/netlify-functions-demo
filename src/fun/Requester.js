@@ -1,4 +1,5 @@
 import React from 'react';
+import netlifyIdentity from "netlify-identity-widget";
 
 class Requester extends React.Component {
   constructor(props) {
@@ -9,19 +10,27 @@ class Requester extends React.Component {
   }
 
   makeRequest() {
-    const { user } = this.props;
     const { input } = this.state;
     const endpoint = '/.netlify/functions/hello';
     const finalEndpoint = input ? `${endpoint}?input=${input}` : endpoint;
 
-    const headers = {};
-    if (user) {
-      headers.Authorization = `Authorization: Bearer ${user.token}`;
+    const request = (headers) => {
+      fetch(finalEndpoint, { headers })
+          .then(response => response.json())
+          .then(json => { this.setState({ json }) });
+    };
+
+    const currentUser = netlifyIdentity.currentUser()
+
+    if (currentUser) {
+      currentUser.jwt().then(token => {
+        const headers = { Authorization: `Bearer ${token}` };
+        request(headers);
+      });
+    } else {
+      request();
     }
 
-    fetch(finalEndpoint, { headers })
-      .then(response => response.json())
-      .then(json => { this.setState({ json }) });
   }
 
   render () {
