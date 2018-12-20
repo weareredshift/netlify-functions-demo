@@ -8,6 +8,7 @@ This app demos some of the cool features that Netlify makes easy. Specifically, 
 ## Getting Started
 
 - Install NPM (using NVM is best).
+- Install yarn globally (`npm install -g yarn`).
 - Clone this repo.
 - Change the Github remote to your own repository.
 - Run `yarn install`.
