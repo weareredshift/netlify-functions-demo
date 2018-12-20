@@ -2,8 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-// import Requester from './fun/Requester';
-// import Identity from './fun/Identity';
+import Requester from './fun/Requester';
 // import Identity from './fun/Identity';
 
 class App extends React.Component {
@@ -19,9 +18,9 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          p style={{ marginBottom: '40px' }}>Let's get started!</p>
+          <p style={{ marginBottom: '40px' }}>Let's get started!</p>
           { /* <Identity setState={ this.setState.bind(this) } user={ user }/> */ }
-          { /* <Requester user={ user } /> */ }
+          <Requester user={ user } />
         </header>
       </div>
     );
