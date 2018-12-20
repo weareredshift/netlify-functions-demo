@@ -3,7 +3,28 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    }
+  }
+
+  makeRequest() {
+    const { input } = this.state;
+    const endpoint = '/.netlify/functions/hello';
+    const finalEndpoint = input ? `${endpoint}?input=${input}` : endpoint;
+
+    fetch(finalEndpoint)
+      .then(response => response.json())
+      .then(result => {
+        this.setState({ result })
+      })
+  }
+
   render() {
+    const { result, input } = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
@@ -11,14 +32,28 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+
+          <input
+            value={ input }
+            onChange={ (e) => { this.setState({ input: e.target.value }) }}
+            placholder="Fill me"
+            onKeyPress={ event => {
+              if (event.key === 'Enter') {
+                this.makeRequest();
+              }
+            }}
+          />
+
+          <a href="#hello" onClick={ () => this.makeRequest() }>
+            Click me to make a request with the above queryString
           </a>
+
+          <p>Result:</p>
+          { result &&
+            <pre>
+              { JSON.stringify(result) }
+            </pre>
+          }
         </header>
       </div>
     );
