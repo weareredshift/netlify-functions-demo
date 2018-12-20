@@ -36,7 +36,7 @@ class App extends Component {
           <input
             value={ input }
             onChange={ (e) => { this.setState({ input: e.target.value }) }}
-            placholder="Fill me"
+            placeholder="Submit a query string"
             onKeyPress={ event => {
               if (event.key === 'Enter') {
                 this.makeRequest();
@@ -44,16 +44,20 @@ class App extends Component {
             }}
           />
 
-          <a href="#hello" onClick={ () => this.makeRequest() }>
-            Click me to make a request with the above queryString
-          </a>
-
           <p>Result:</p>
           { result &&
             <pre>
               { JSON.stringify(result) }
             </pre>
           }
+
+          <p>Check out this form:</p>
+          <form style={{ margin: '20px' }} netlify for="things">
+            <input type="text" for="name" placeholder="Name" />
+            <input type="text" for="email" placeholder="Email" />
+            <br/>
+            <input type="submit" />
+          </form>
         </header>
       </div>
     );
