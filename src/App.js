@@ -4,6 +4,7 @@ import './App.css';
 
 // import Requester from './fun/Requester';
 // import Identity from './fun/Identity';
+// import Identity from './fun/Identity';
 
 class App extends React.Component {
   constructor(props) {
