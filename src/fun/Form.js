@@ -19,9 +19,9 @@ class Form extends React.Component {
       ...this.state
     };
 
-    if (user) {
-      data.user = user;
-    }
+    // if (user) {
+    //   data.user = user;
+    // }
 
     fetch("/", {
       method: "POST",
