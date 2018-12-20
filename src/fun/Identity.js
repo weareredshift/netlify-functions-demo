@@ -35,12 +35,22 @@ const Identity = ({ setState, user  }) => {
     });
   }
 
+  const styles = {
+    background: 'white',
+    border: '1px solid black',
+    borderRadius: '10%',
+    color: 'black',
+    cursor: 'pointer',
+    padding: '15px 25px',
+    fontSize: '20px'
+  };
+
   return (
     user
       ? <p>
         Logged in as {user.name} ({user.email})
       </p>
-      : <div onClick={ login }>Login</div>
+      : <div style={ styles } onClick={ login }>Login</div>
   );
 }
 
