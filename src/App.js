@@ -4,7 +4,6 @@ import './App.css';
 
 // import Requester from './fun/Requester';
 // import Identity from './fun/Identity';
-import Form from './fun/Form';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +21,6 @@ class App extends React.Component {
           <p style={{ marginBottom: '40px' }}>Let's get started!</p>
           { /* <Identity setState={ this.setState.bind(this) } user={ user }/> */ }
           { /* <Requester user={ user } /> */ }
-          <Form user={ user }/>
         </header>
       </div>
     );
