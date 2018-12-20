@@ -9,11 +9,17 @@ class Requester extends React.Component {
   }
 
   makeRequest() {
+    const { user } = this.props;
     const { input } = this.state;
     const endpoint = '/.netlify/functions/hello';
     const finalEndpoint = input ? `${endpoint}?input=${input}` : endpoint;
 
-    fetch(finalEndpoint)
+    const headers = {};
+    if (user) {
+      headers.Authorization = `Authorization: Bearer ${user.token}`;
+    }
+
+    fetch(finalEndpoint, { headers })
       .then(response => response.json())
       .then(json => { this.setState({ json }) });
   }

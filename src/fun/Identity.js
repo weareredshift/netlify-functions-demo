@@ -22,38 +22,26 @@ const netlifyAuth = {
   }
 };
 
-class Identity extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  login = () => {
-    netlifyAuth.authenticate((response) => {
-      this.setState({
+const Identity = ({ setState, user  }) => {
+  const login = () => {
+    netlifyAuth.authenticate((response, other) => {
+      setState({
         user: {
           name: response.user_metadata.full_name,
-          email: response.email
+          email: response.email,
+          token: response.token.access_token
         }
       });
     });
   }
 
-  render () {
-    const { user } = this.state;
-    return (
-      <div>
-        { user
-          ? <div>
-            <p>User:</p>
-            <pre>{ JSON.stringify(user) }</pre>
-          </div>
-          : <div onClick={ this.login.bind(this) }>Login</div>
-        }
-      </div>
-    );
-
-  }
+  return (
+    user
+      ? <p>
+        Logged in as {user.name} ({user.email})
+      </p>
+      : <div onClick={ login }>Login</div>
+  );
 }
 
 

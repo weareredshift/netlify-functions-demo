@@ -6,16 +6,33 @@ import Requester from './fun/Requester';
 import Identity from './fun/Identity';
 import Form from './fun/Form';
 
-const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p style={{ marginBottom: '40px' }}>Let's get started!</p>
-      <Identity />
-      <Requester />
-      <Form />
-    </header>
-  </div>
-);
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+
+  render () {
+    const { user } = this.state;
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p style={{ marginBottom: '40px' }}>Let's get started!</p>
+          {
+            user && <p>
+              Logged in as {user.name} ({user.email})
+            </p>
+          }
+          <Identity setState={ this.setState.bind(this) }/>
+          <Requester user={ user } />
+          <Form />
+        </header>
+      </div>
+    );
+  }
+};
 
 export default App;
