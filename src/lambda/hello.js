@@ -4,12 +4,13 @@ const obj = {
 
 export function handler(event, context, callback) {
   const query = event.queryStringParameters;
-  const { input } = query;
 
-  const inputNum = parseInt(input);
-  if (input && input === inputNum.toString()) {
-    obj['2x'] = (inputNum * 2).toString();
-  }
+  // const { input } = query;
+  // const inputNum = parseInt(input);
+
+  // if (input && input === inputNum.toString()) {
+  //   obj['2x'] = (inputNum * 2).toString();
+  // }
 
   callback(null, {
     statusCode: 200,
