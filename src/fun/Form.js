@@ -47,7 +47,7 @@ class Form extends React.Component {
   render() {
     const { name, email, message } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form netlify onSubmit={this.handleSubmit}>
         <p>
           <label>
             Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
