@@ -18,7 +18,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p style={{ marginBottom: '40px' }}>Let's get started!</p>
+          <p style={{ marginBottom: '40px' }}>This is working!</p>
           <Identity setState={ this.setState.bind(this) } user={ user }/>
           <Requester user={ user } />
         </header>
