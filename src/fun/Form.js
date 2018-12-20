@@ -34,9 +34,9 @@ class Form extends React.Component {
         email: '',
         name: ''
       });
-      return response.json();
-    }).then(json => {
-      console.log('JSON', json);
+      return response.text();
+    }).then(text => {
+      console.log('TEXT', text);
     })
       .catch(error => alert(error));
 
