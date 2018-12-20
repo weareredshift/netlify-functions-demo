@@ -21,7 +21,6 @@ class App extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p style={{ marginBottom: '40px' }}>Let's get started!</p>
-          <Form />
         </header>
       </div>
     );
