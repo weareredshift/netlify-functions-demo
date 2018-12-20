@@ -1,44 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Purpose
 
-## Available Scripts
+This app demos some of the cool features that Netlify makes easy. Specifically, it incorporates:
 
-In the project directory, you can run:
+- Netlify Identity - Easy and customizable built-in authentication.
+- Netlify Functions - A wrapper for AWS Lambda/API Gateway that makes it simple to test out and deploy server-side functions accessible by API and tied to a particular Github branch. These functions can also be handed the user and identity data from Netlify Identity.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Install NPM (using NVM is best).
+- Clone this repo.
+- Change the Github remote to your own repository.
+- Run `yarn install`.
+- Run `yarn start` and view the local app at `localhost:3000`.
+- Make and commit any changes.
+- Push to your Github repository.
+- Create a Netlify account and choose to deploy with `yarn build` as the build command and `build` as the directory (should be set as defaults).
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Or...
 
-### `npm test`
+To simply deploy it to a URL associated with your Netlify account:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/weareredshift/netlify-functions-demo)
