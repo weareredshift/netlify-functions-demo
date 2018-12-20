@@ -15,7 +15,7 @@ class Form extends React.Component {
   handleSubmit = e => {
     const { user } = this.props;
     const data = {
-      "form-name": "message",
+      "form-name": "messages",
       ...this.state
     };
 
@@ -46,6 +46,7 @@ class Form extends React.Component {
 
   render() {
     const { name, email, message } = this.state;
+
     return (
       <form netlify onSubmit={this.handleSubmit}>
         <p>
