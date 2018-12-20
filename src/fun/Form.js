@@ -27,7 +27,14 @@ class Form extends React.Component {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(data)
-    }).then(() => console.log("Success!"))
+    }).then((response) => {
+      console.log("Success!", response);
+      this.setState({
+        message: '',
+        email: '',
+        name: ''
+      });
+    })
       .catch(error => alert(error));
 
     e.preventDefault();
