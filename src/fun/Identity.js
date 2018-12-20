@@ -30,9 +30,11 @@ class Identity extends React.Component {
 
   login = () => {
     netlifyAuth.authenticate((response) => {
-      console.log(response);
       this.setState({
-        user: { name: response.user_metadata.full_name, email: response.email }
+        user: {
+          name: response.user_metadata.full_name,
+          email: response.email
+        }
       });
     });
   }
