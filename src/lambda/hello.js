@@ -5,6 +5,9 @@ const obj = {
 export function handler(event, context, callback) {
   const query = event.queryStringParameters;
 
+  console.log(JSON.stringify(event, null, 2));
+  console.log(JSON.stringify(context, null, 2));
+
   // const { input } = query;
   // const inputNum = parseInt(input);
 

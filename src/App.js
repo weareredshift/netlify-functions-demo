@@ -9,9 +9,9 @@ import Form from './fun/Form';
 const App = () => (
   <div className="App">
     <header className="App-header">
-      <Identity />
       <img src={logo} className="App-logo" alt="logo" />
-      <p>Let's get started!</p>
+      <p style={{ marginBottom: '40px' }}>Let's get started!</p>
+      <Identity />
       <Requester />
       <Form />
     </header>
