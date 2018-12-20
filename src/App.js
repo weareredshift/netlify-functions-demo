@@ -4,8 +4,7 @@ import './App.css';
 
 // import Requester from './fun/Requester';
 // import Identity from './fun/Identity';
-// <Identity setState={ this.setState.bind(this) } user={ user }/>
-// <Requester user={ user } />
+import Form from './fun/Form';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +20,9 @@ class App extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p style={{ marginBottom: '40px' }}>Let's get started!</p>
+          { /* <Identity setState={ this.setState.bind(this) } user={ user }/> */ }
+          { /* <Requester user={ user } /> */ }
+          <Form user={ user }/>
         </header>
       </div>
     );

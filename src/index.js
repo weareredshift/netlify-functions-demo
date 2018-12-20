@@ -4,9 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import netlifyIdentity from 'netlify-identity-widget'
+import netlifyIdentity from 'netlify-identity-widget';
 
-const buttons = document.createElement('div')
 netlifyIdentity.init()
 
 ReactDOM.render(<App />, document.getElementById('root'));
